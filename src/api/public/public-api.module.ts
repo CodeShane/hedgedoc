@@ -16,6 +16,7 @@ import { MeController } from './me/me.controller';
 import { NotesController } from './notes/notes.controller';
 import { MediaController } from './media/media.controller';
 import { MonitoringController } from './monitoring/monitoring.controller';
+import { UploadsController } from './uploads/uploads.controller';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { MonitoringController } from './monitoring/monitoring.controller';
     NotesController,
     MediaController,
     MonitoringController,
+    UploadsController,
   ],
 })
 export class PublicApiModule {}

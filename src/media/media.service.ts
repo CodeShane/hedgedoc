@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The HedgeDoc developers (see AUTHORS file)
+ * SPDX-FileCopyrightText: 2021 The HedgeDoc developers (see AUTHORS file)
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
@@ -122,6 +122,22 @@ export class MediaService {
       );
     }
     return mediaUpload;
+  }
+
+  /*
+   * Is FILESYSTEM configured as the used media backend?
+   * @return {boolean} the answer to the question
+   */
+  backendIsFileSystem(): boolean {
+    return this.mediaConfig.backend.use === BackendType.FILESYSTEM;
+  }
+
+  /*
+   * Get the uploadPath configured for the filesystem.
+   * @return {string} the uploadPath
+   */
+  getUploadPath(): string {
+    return this.mediaConfig.backend.filesystem.uploadPath;
   }
 
   private chooseBackendType(): BackendType {
